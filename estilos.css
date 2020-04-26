@@ -1,0 +1,396 @@
+:root{
+  --color2: red;
+  --color3: blue;
+  --titulos: 72px;
+  --margenes: 60px;
+  --espacios: 10px;
+  --espacios-contenido:45px;
+}
+
+* {
+  margin: 0;            
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif; /*toda la fuente de la pagina*/
+  background: #53c700; /*color de fondo de la pagina*/
+}
+
+img{
+  vertical-align: middle; /*todas las imagenes al centro de sus cajas*/
+  align-content: center;
+}
+
+
+/* Preloader */
+.hidden{
+  overflow: hidden;
+}
+
+.centrado{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #53c700;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 6px;
+  width: 13px;
+  background: white;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+  left: 6px;
+  animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+  left: 26px;
+  animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+  left: 45px;
+  animation-delay: 0;
+}
+
+@keyframes lds-facebook {
+  0% {
+    top: 6px;
+    height: 51px;
+  }
+
+  50%,
+  100% {
+    top: 19px;
+    height: 26px;
+  }
+}
+
+/* Header */
+
+header{
+  width: 100%; /*todo el ancho de la pagina*/
+  height: 600px; /*alto del header*/
+  background: linear-gradient(to bottom, /*degradado sobre la imagen de header*/
+  rgba(255, 157, 46, 0.61), rgb(255, 225, 0)
+  ), url(img/fondo.jpg);
+  background-attachment: fixed; /*que se quede fijo en la caja*/
+  background-position: center; /*que se centre el la caja*/
+  background-size: cover; /*que cubra toda la caja*/
+}
+
+nav{
+  width: 100%; /*todo el ancho de la pagina*/
+  position: fixed; /*que se quede fijo arriba de la pagina*/
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.5); /*sombra*/
+  font-family: 'Lato', sans-serif; /*tipografioa que va a utilizar*/
+}
+
+.nav1{ /*asi se ve cuando estas hasta arriba de la pagina*/
+  background: rgb(255, 159, 46); /*fondor*/
+  height: 100px; /*alto*/
+  color: black; /*color de los textos*/
+}
+
+.nav2{ /*asi se ve cuando mueves la pagina hacia abajo*/
+  background: #409b00; /*fondo*/
+  height: 100px; /*alto*/
+  color: white; /*color de los textos*/
+}
+
+.contenedor-nav{
+  display: flex;
+  margin: auto;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  height: inherit;
+  overflow: hidden;
+}
+
+nav .enlaces a{
+  display: inline-block; /*como se distribuye */
+  padding: 5px 0; /*espacio de arriba-abajo de los tetxps*/
+  margin-right: 17px; /*margen a la derecja del texto*/
+  font-size: 12pt; /*tamaño de fuente*/
+  text-decoration: none; /*sin decoracion*/
+  border-bottom: 3px solid transparent;
+  color: inherit;
+}
+
+nav .enlaces a:hover{               /*cuando pasas el cursor sobre el texto*/
+  border-bottom: 3px solid black; /*sale un borde abajo*/
+  transition: 0.5s;                 /*cuanto tarda en salir el borde*/
+}
+
+.logo img {     /*LOGOTIPO CRAFTIME*/
+  height: 80px;  /*ALTO*/
+  line-height: 80px;
+}
+
+.icono{
+  display: none;
+  font-size: 40px;      /*tamaño del icono como si fuera una letra*/
+  padding: 23.5px 20px; /*1erValor: ARRIBA-ABAJO 2doValor: LADOS*/
+}
+
+.textos{ /*textos del header*/
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color:white;          /*color de los textos*/
+  overflow: hidden;       /*(DESBORDE: DESAPARECE;)*/
+  text-align: center;
+}
+
+.textos>p{
+  font-size: 120px; /*texto craftime*/
+}
+
+
+/* despues del header */
+
+.contenedor{
+  margin: auto;
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contenedor h1{         /*TITULOS DE APARTADOS*/
+  font-size: 50px;      /*TAMAÑO DE FUENTE*/
+  color: white;       /*COLOR DE FUENTE*/
+  padding-top: 10px;
+  padding-bottom: 10px; /*ESPACIO BAJO EL TITULO*/
+}
+
+.contenedor p{      /*PARRAFOS DE APARTADOS*/
+  font-size: 18pt;  /*TAMAÑO DE FUENTE*/  
+  color: white;   /*COLOR DE FUENTE*/
+}
+
+.after::after{          /*LA RAYA QUE APARECE ABAJO*/
+  content:'';           /*PARA QUE NO HAYA CONTENIDO*/
+  display: block;
+  margin: auto;         /*PARA QUE CENTRE HORIZONTALMENTE EN LA PAGINA*/
+  margin-top: 30px;     /*margen hacia arriba*/
+  margin-bottom: 30px;  /*margen hacia abajo*/
+  width: 75%;           /*Tamaño de la linea respecto a la caja contenedora*/
+  height: 3px;          /*ancho de la linea*/
+  background: white;
+}
+
+.card{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.content-card{ 
+  width: 31%;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
+  border-radius: 15px;
+  overflow: hidden;
+  height: auto;
+  background: #409b00;
+  color: white;
+  font-size: 16pt;
+  margin-bottom: 20px;
+}
+
+.people{ /*porcentaje de las imagenes respecto a la tarjeta*/
+  height: 80%;
+}
+
+.content-card img{ /*imagenes dentro de las tarjetas*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about{
+  background: linear-gradient(to bottom,
+  rgba(255, 157, 46, 0.61), rgb(255, 225, 0)
+  ), url(img/craft.jpg);
+  height: auto;
+}
+
+.servicios{
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.caja-servicios{
+  width: 33%;
+  margin: auto;
+  text-align: center;
+}
+h4{
+  font-size: 18pt;
+  margin-top: 15px;
+}
+
+.botones-work{
+  overflow: hidden;
+}
+
+.botones-work li{
+  display: inline-block;
+  text-align: center;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  padding: 18px 32px;
+  background: #ff9f2e;
+  list-style: none;
+  color: black;
+  font-size: 16pt;
+  border-radius: 12px;
+}
+
+.botones-work li:hover{
+  background: #d67200;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.botones-work .active{
+  background: #d67200;
+  color: white;
+}
+
+.galeria-work{
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.cont-work{
+  width: 31%;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #409b00;
+  color: white;
+  font-size: 16pt;
+}
+
+.img-work{
+  height: 80%;
+  width: 100%;
+}
+
+.img-work img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+/* Footer */
+
+footer{ 
+  background: linear-gradient(to bottom,
+  rgba(255, 157, 46, 0.61), rgb(255, 225, 0)
+  ), url(img/craft.jpg);;}
+
+.marca-logo{ /*caja que contiene al logotipo blanco*/
+  width: 20%; /*ancho de la caja respecto al .contenedor*/
+  margin: auto; /*para que se centre horizontalmente*/
+  margin-top: 10px; /*margen arriba*/
+  margin-bottom: 10px; /* margen abajo*/
+
+}
+
+.marca-logo img{ /*logotipo blanco*/
+  width: 100%; /*ancho*/
+}
+
+.iconos{ /*caja que contiene los iconos*/
+  display: flex;
+  margin: auto; /*centrados*/
+  justify-content: space-around; /*justificados*/
+  width: 100%; /*ancho de la caja respecto al .contenedor*/
+}
+
+.fab{ /*iconos*/
+  font-size: 80px; /*tamaño como si fuesen letras*/
+  color: white; /*color como si fuesen letras*/
+  display: inline-block;
+  margin-bottom: 10px; /*margen debajo de los iconos*/
+}
+
+@media screen and (max-width: 700px){
+  .nav2{
+    color: white;
+  }
+
+  .icono{
+    display: block;
+    cursor: pointer;
+  }
+
+  .enlaces{
+    position: fixed;
+    left: 0;
+    transition: 1s;
+    width: 0;
+    overflow: hidden;
+  }
+
+  .enlaces a{
+    width: 100%;
+    text-align: center;
+    background: #d67200;
+  }
+
+  .content-card{
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 500px){
+  .content-card{
+    width: 85%;
+  }
+
+  .caja-servicios{
+    width: 90%;
+  }
+
+  .cont-work{
+    width: 85%;
+  }
+
+  .marca-logo{ /*logotipo*/
+    width: 50%;
+  }
+
+  .iconos{
+    margin: auto;
+  }
+}
